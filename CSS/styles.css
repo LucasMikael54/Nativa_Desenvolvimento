@@ -1,35 +1,221 @@
-/*/////CABEÇALHO/////*/
-.logo {
-    width: 20%;
+
+/* Remove margens e espaçamentos padrões do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.tampa {
-    background-color: rgb(16, 16, 100);
-    height: 100px;
+/* Rolagem suave ao clicar no menu */
+html {
+    scroll-behavior: smooth;
 }
 
-.caixa {
+/* Configuração geral da página */
+body {
+    font-family: "Poppins", sans-serif;
+
+    /* Evita barra horizontal indesejada */
+    overflow-x: hidden;
+}
+
+/*CABEÇALHO */
+
+.cabecalho {
+
+    /* Azul principal do NATIVA */
+    background-color: #0B1048;
+
+    /* Altura do cabeçalho */
+    height: 110px;
+
+    /* Logo e menu lado a lado */
     display: flex;
-    position: fixed;
-    width: 100%;
-    list-style: none;
-    gap: 50px;
-    cursor: pointer;
+
+    /* Centraliza verticalmente */
     align-items: center;
+
+    /* Espaçamento interno */
+    padding: 0 70px;
+
+    /* Mantém o cabeçalho acima dos outros elementos */
+    position: relative;
+    z-index: 10;
 }
 
-.caixa-item {
-    color: white;
+
+/*LOGO */
+
+.logo {
+
+    /* Largura da logo */
+    width: 270px;
+
+    /* Impede a logo de ultrapassar seu tamanho */
+    max-width: 100%;
+
+    /* Mantém a proporção */
+    height: auto;
+}
+
+/*MENU*/
+.menu {
+
+    /* Links lado a lado */
+    display: flex;
+
+    /* Espaço entre os links */
+    gap: 55px;
+
+    /* Distância entre logo e menu */
+    margin-left: 80px;
+}
+
+/* Links */
+.menu a {
+
+    color: #FFFFFF;
+
     text-decoration: none;
+
     font-size: 15px;
-    background: none;
-    border: none;
+
+    font-weight: 500;
+
     text-transform: uppercase;
-    
-   
+
+    /* Animação para efeitos futuros */
+    transition: 0.3s;
 }
-/*/////Sections/////*/
-.caixa-seçao{
-    background-color:darkgrey;
-    padding: 1px;
+
+
+/* Efeito quando passa o mouse */
+.menu a:hover {
+
+    /* Verde presente na identidade do NATIVA */
+    color: #58C72B;
 }
+
+/*PRIMEIRA SEÇÃO */
+
+.inicio {
+
+    /*Permite posicionar a imagem dentro da seção. */
+    position: relative;
+
+    /* Centraliza o conteúdo verticalmente */
+    display: flex;
+
+    align-items: center;
+
+    /* Altura principal da seção */
+    min-height: 540px;
+
+    /* Fundo azul escuro */
+    background-color: #080D3D;
+
+    /*Esconde qualquer parte da imagem que ultrapasse a seção.*/
+    overflow: hidden;
+}
+
+
+/* TEXTOS DO HERO */
+
+.conteudo-inicio {
+
+    /* Relative + z-index mantém o texto acima da imagem.*/
+    position: relative;
+    z-index: 2;
+    /* Espaço disponível para os textos */
+    width: 55%;
+    /* Distância da lateral esquerda */
+    padding-left: 70px;
+}
+
+
+/*FRASE VERDE */
+.conteudo-inicio h3 {
+    color: #58C72B;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+
+/*TÍTULO PRINCIPAL */
+.conteudo-inicio h1 {
+
+    color: #FFFFFF;
+
+    font-size: 48px;
+
+    font-weight: 700;
+
+    line-height: 1.15;
+
+    max-width: 720px;
+
+    margin-bottom: 30px;
+}
+
+/*TEXTO DE APRESENTAÇÃO */
+.conteudo-inicio p {
+    color: #D9DCE8;
+
+    font-size: 17px;
+
+    font-weight: 400;
+
+    line-height: 1.7;
+
+    max-width: 650px;
+}
+
+/* IMAGEM DO HERO */
+.imagem-inicio {
+    /* A imagem cobre toda a seção */
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Fotografia */
+.imagem-inicio img {
+
+    /* Faz a imagem ocupar toda a largura */
+    width: 100%;
+
+    /* Faz a imagem ocupar toda a altura */
+    height: 100%;
+
+    /* Preenche o espaço mantendo a proporção da imagem */
+    object-fit: cover;
+
+    /* Centraliza o enquadramento */
+    object-position: center;
+}
+
+/* Camada bem leve para integrar a imagem ao fundo */
+.imagem-inicio::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to right,
+        rgba(8, 13, 61, 0.30) 0%,
+        rgba(8, 13, 61, 0.10) 35%,
+        rgba(8, 13, 61, 0) 60%
+    );
+}
+
+
+
+
+
