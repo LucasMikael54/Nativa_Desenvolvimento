@@ -58,6 +58,7 @@ body {
     height: auto;
 }
 
+
 /*MENU*/
 .menu {
 
@@ -215,7 +216,8 @@ body {
     );
 }
 
-
-
-
-
+/*/////Sections/////*/
+.caixa-seçao{
+    background:linear-gradient( rgb(0, 100, 130),rgb(11, 205, 0));
+    padding: 1px;
+}
