@@ -42,6 +42,31 @@ body {
     position: relative;
     z-index: 10;
 }
+.cabecalho2 {
+
+    /* Azul principal do NATIVA */
+    background-color: #0B1048;
+
+    /* Altura do cabeçalho */
+    height: 110px;
+
+    /* Logo e menu lado a lado */
+    display: flex;
+
+    /* Centraliza verticalmente */
+    align-items: center;
+
+    /* Espaçamento interno */
+    padding: 0 70px;
+
+    /* Mantém o cabeçalho acima dos outros elementos */
+    position: relative;
+    z-index: 10;
+
+
+}
+
+
 
 
 /*LOGO */
