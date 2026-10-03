@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 /* Rolagem suave ao clicar no menu */
@@ -14,7 +15,8 @@ html {
 /* Configuração geral da página */
 body {
     font-family: "Poppins", sans-serif;
-
+    background-color: #0B1048;
+    
     /* Evita barra horizontal indesejada */
     overflow-x: hidden;
 }
@@ -156,6 +158,7 @@ body {
     width: 55%;
     /* Distância da lateral esquerda */
     padding-left: 70px;
+    
 }
 
 
@@ -245,4 +248,44 @@ body {
 .caixa-seçao{
     background:linear-gradient( rgb(0, 100, 130),rgb(11, 205, 0));
     padding: 1px;
+}
+
+.conteudo-servicos{
+    color: #FFFFFF;
+
+    font-size: 15px;
+
+    font-weight: 400;
+
+    line-height: 1.7;
+
+    max-width: 360px;
+    
+}
+
+.conteudo-projetos{
+   color: #FFFFFF;
+
+    font-size: 15px;
+
+    font-weight: 400;
+
+    line-height: 1.7;
+
+    max-width: 360px; 
+}
+
+.container{
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.quadrado{
+    width:200px;
+    border: 1px solid white;
+}
+
+.servicos{
+    display: flex;
 }
