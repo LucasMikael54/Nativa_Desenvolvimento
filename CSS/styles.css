@@ -15,8 +15,18 @@ html {
 /* Configuração geral da página */
 body {
     font-family: "Poppins", sans-serif;
-    background-color: #0B1048;
-    
+    /*background-color: #0B1048;*/
+    background: hsla(0, 0%, 90%, 1);
+
+background: hsla(0, 0%, 90%, 1);
+
+background: linear-gradient(90deg, hsla(0, 0%, 90%, 1) 0%, hsla(235, 73%, 16%, 1) 52%);
+
+background: -moz-linear-gradient(90deg, hsla(0, 0%, 90%, 1) 0%, hsla(235, 73%, 16%, 1) 52%);
+
+background: -webkit-linear-gradient(90deg, hsla(0, 0%, 90%, 1) 0%, hsla(235, 73%, 16%, 1) 52%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#E5E5E5", endColorstr="#0B1048", GradientType=1 );
     /* Evita barra horizontal indesejada */
     overflow-x: hidden;
 }
@@ -271,6 +281,8 @@ body {
     justify-content: center;
 
     margin: 25px;  
+
+    /*background-color: white;teste*/
 }
 
 .container-servicos{
@@ -300,6 +312,13 @@ body {
 
     margin-left: 40px 
 
+   
+
+}
+
+.quadrado:hover{
+    /*Efeito do quadrado subir um pouco! */
+    transform: translateY(-10px);
 }
 
 .conteudo-projetos{
@@ -356,6 +375,14 @@ body {
 
     margin-left: 40px 
 
+}
+
+.quadrado1{
+    transition: 0.3;
+}
+
+.quadrado1:hover img{
+    transform: scale(1.08);
 }
 
 .quadrado1{
