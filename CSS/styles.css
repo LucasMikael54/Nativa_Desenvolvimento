@@ -16,17 +16,7 @@ html {
 body {
     font-family: "Poppins", sans-serif;
     /*background-color: #0B1048;*/
-    background: hsla(0, 0%, 90%, 1);
-
-background: hsla(0, 0%, 90%, 1);
-
-background: linear-gradient(90deg, hsla(0, 0%, 90%, 1) 0%, hsla(235, 73%, 16%, 1) 52%);
-
-background: -moz-linear-gradient(90deg, hsla(0, 0%, 90%, 1) 0%, hsla(235, 73%, 16%, 1) 52%);
-
-background: -webkit-linear-gradient(90deg, hsla(0, 0%, 90%, 1) 0%, hsla(235, 73%, 16%, 1) 52%);
-
-filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#E5E5E5", endColorstr="#0B1048", GradientType=1 );
+    
     /* Evita barra horizontal indesejada */
     overflow-x: hidden;
 }
@@ -54,31 +44,6 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#E5E5E5", en
     position: relative;
     z-index: 10;
 }
-.cabecalho2 {
-
-    /* Azul principal do NATIVA */
-    background-color: #0B1048;
-
-    /* Altura do cabeçalho */
-    height: 110px;
-
-    /* Logo e menu lado a lado */
-    display: flex;
-
-    /* Centraliza verticalmente */
-    align-items: center;
-
-    /* Espaçamento interno */
-    padding: 0 70px;
-
-    /* Mantém o cabeçalho acima dos outros elementos */
-    position: relative;
-    z-index: 10;
-
-
-}
-
-
 
 
 /*LOGO */
@@ -261,7 +226,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#E5E5E5", en
 }
 
 .conteudo-servicos{
-    color: #FFFFFF;
+    color: #000000;
 
     font-size: 15px;
 
@@ -322,7 +287,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#E5E5E5", en
 }
 
 .conteudo-projetos{
-    color: #FFFFFF;
+    color: #ffffff;
 
     font-size: 14px;
 
@@ -341,6 +306,8 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#E5E5E5", en
     gap: 20px;
 
     width: 100%;
+
+    background-color: #080D3D;
 }
 
 
@@ -352,6 +319,8 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#E5E5E5", en
     margin: 25px;  
 
     justify-content: center;
+
+    background-color: #080D3D;
     
 }
 
