@@ -1,16 +1,410 @@
-@media (max-width: 400px) {
-    .servicos, .container-servicos, .container-projetos, .projetos{
-        flex-direction: column;
-        width: 100%;
-    }    
 
-    .quadrado{
+/*NATIVA DESENVOLVIMENTO RESPONSIVIDADE*/
+/*1. TABLET - ATÉ 1024px */
+
+@media (max-width: 1024px) {
+
+    /* CABEÇALHO */
+
+    .cabecalho {
+        height: auto;
+        min-height: 95px;
+        padding: 20px 30px;
+        gap: 20px;
+    }
+
+    .logo {
+        width: 210px;
+        height: auto;
+    }
+
+    .menu {
+        margin-left: auto;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .menu a {
+        font-size: 13px;
+    }
+
+
+    /* PRIMEIRA SEÇÃO */
+
+    .inicio {
+        min-height: 500px;
+    }
+
+    .conteudo-inicio {
+        width: 70%;
+        padding-left: 40px;
+        padding-right: 20px;
+    }
+
+    .conteudo-inicio h3 {
+        font-size: 18px;
+    }
+
+    .conteudo-inicio h1 {
+        font-size: 38px;
+    }
+
+    .conteudo-inicio p {
+        font-size: 15px;
+    }
+
+    /* Mantém a imagem proporcional */
+
+    .imagem-inicio img {
+        object-fit: cover;
+        object-position: 60% center;
+    }
+
+    /* Degradê para facilitar a leitura */
+
+    .imagem-inicio::after {
+        background: linear-gradient(
+            to right,
+            #080D3D 0%,
+            rgba(8, 13, 61, 0.95) 35%,
+            rgba(8, 13, 61, 0.35) 100%
+        );
+    }
+
+
+    /* SERVIÇOS */
+
+    .servicos {
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+        padding: 20px;
+        gap: 30px;
+    }
+
+    .conteudo-servicos {
+        max-width: 700px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .container-servicos {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .quadrado {
+        width: calc(50% - 20px);
+        max-width: 350px;
+        margin-left: 0;
+    }
+
+
+    /* PROJETOS */
+
+    .projetos {
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+        padding: 20px;
+        gap: 30px;
+    }
+
+    .conteudo-projetos {
+        max-width: 700px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .carrossel {
+        width: 100%;
+        max-width: 760px;
+        overflow: hidden;
+    }
+
+    .container-projetos {
+        width: 100%;
+        gap: 15px;
+    }
+
+    .quadrado1 {
+        flex: 0 0 calc(50% - 8px);
+        margin-left: 0;
+        min-width: 0;
+    }
+
+
+    /* RODAPÉ */
+
+    .cabecalho2 {
+        height: auto;
+        min-height: 110px;
+        padding: 25px 30px;
+    }
+
+    .logo-footer {
+        width: 220px;
+        height: auto;
+    }
+
+}
+
+
+/*2. CELULAR - ATÉ 768px */
+
+@media (max-width: 768px) {
+
+    /* CABEÇALHO */
+
+    .cabecalho {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .logo {
+        width: 200px;
+    }
+
+    .menu {
+        margin-left: 0;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px 20px;
+    }
+
+    .menu a {
+        font-size: 12px;
+    }
+
+
+    /* PRIMEIRA SEÇÃO */
+
+    .inicio {
+        min-height: 550px;
+        padding: 60px 0;
+    }
+
+    .conteudo-inicio {
+        width: 100%;
+        padding: 0 30px;
+    }
+
+    .conteudo-inicio h3 {
+        font-size: 17px;
+        margin-bottom: 20px;
+    }
+
+    .conteudo-inicio h1 {
+        font-size: 34px;
+        line-height: 1.2;
+        margin-bottom: 25px;
+    }
+
+    .conteudo-inicio p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    /* Imagem permanece no fundo */
+
+    .imagem-inicio {
+        width: 100%;
+        height: 100%;
+    }
+
+    .imagem-inicio img {
+        object-fit: cover;
+        object-position: 65% center;
+    }
+
+    /* Degradê mais escuro para leitura */
+
+    .imagem-inicio::after {
+        background: linear-gradient(
+            to right,
+            rgba(8, 13, 61, 0.96),
+            rgba(8, 13, 61, 0.80)
+        );
+    }
+
+
+    /* SERVIÇOS */
+
+    .servicos {
+        margin: 0;
+        padding: 50px 20px;
+    }
+
+    .conteudo-servicos {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .container-servicos {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .quadrado {
+        width: 100%;
+        max-width: 420px;
+        padding: 25px 20px;
+        margin-left: 0;
+    }
+
+
+    /* PROJETOS */
+
+    .projetos {
+        margin: 0;
+        padding: 40px 20px;
+        gap: 25px;
+    }
+
+    .conteudo-projetos {
+        width: 100%;
+        text-align: center;
+    }
+
+    .carrossel {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .container-projetos {
+        display: flex;
+        gap: 15px;
+    }
+
+    .quadrado1 {
+        flex: 0 0 100%;
         width: 100%;
         margin-left: 0;
     }
 
-    .menu{
-        margin: 0;
-        margin-top: 32px;
+    /* Botões do carrossel */
+
+    #anterior {
+        left: 5px;
     }
+
+    #proximo {
+        right: 5px;
+    }
+
+
+    /* RODAPÉ */
+
+    .cabecalho2 {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 30px 20px;
+        gap: 20px;
+    }
+
+    .logo-footer {
+        width: 200px;
+        height: auto;
+    }
+
+    /* Caso adicione menu ao rodapé */
+
+    .cabecalho2 .menu {
+        margin-left: 0;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+}
+
+
+/*3. CELULARES PEQUENOS - ATÉ 480px */
+
+@media (max-width: 480px) {
+
+    /* CABEÇALHO */
+
+    .cabecalho {
+        padding: 20px 15px;
+    }
+
+    .logo {
+        width: 180px;
+    }
+
+    .menu {
+        gap: 12px 15px;
+    }
+
+    .menu a {
+        font-size: 11px;
+    }
+
+
+    /* PRIMEIRA SEÇÃO */
+
+    .inicio {
+        min-height: 580px;
+        padding: 50px 0;
+    }
+
+    .conteudo-inicio {
+        padding: 0 20px;
+    }
+
+    .conteudo-inicio h3 {
+        font-size: 15px;
+    }
+
+    .conteudo-inicio h1 {
+        font-size: 29px;
+        line-height: 1.2;
+    }
+
+    .conteudo-inicio p {
+        font-size: 14px;
+    }
+
+
+    /* SERVIÇOS */
+
+    .servicos {
+        padding: 40px 15px;
+    }
+
+    .quadrado {
+        padding: 20px 15px;
+        font-size: 13px;
+    }
+
+
+    /* PROJETOS */
+
+    .projetos {
+        padding: 40px 15px;
+    }
+
+    .quadrado1 {
+        padding: 10px;
+    }
+
+
+    /* RODAPÉ */
+
+    .cabecalho2 {
+        padding: 25px 15px;
+    }
+
+    .logo-footer {
+        width: 180px;
+    }
+
 }
