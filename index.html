@@ -11,13 +11,23 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- CSS principal -->
     <link rel="stylesheet" href="CSS/styles.css">
+
+    <!-- CSS de responsividade -->
     <link rel="stylesheet" href="CSS/responsividade.css">
-    <link rel="stylesheet" href="CSS/rosape.css
-    ">
+
+    <!-- CSS do rodapé -->
+    <link rel="stylesheet" href="CSS/rodape.css">
+
+    <!-- CSS das novas seções -->
+    <link rel="stylesheet" href="CSS/complementos.css">
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
-   
-    
+
+
+
+
 </head>
 
 <body>
@@ -145,7 +155,7 @@
                 </div>
 
             </section>
-            </div>
+
 
         </section>
         <br>
@@ -190,27 +200,157 @@
                 <button id="anterior" class="anterior">&#10094;</button>
             </div>
 
+        </section><!-- Fecha Projetos -->
+
+
+        <!-- =====================================
+     SEÇÃO SOBRE NÓS
+     ===================================== -->
+
+        <section id="sobre" class="sobre-nativa">
+
+            <div class="sobre-conteudo">
+
+                <!-- Identificação da seção -->
+                <span class="secao-etiqueta">NOSSA HISTÓRIA</span>
+
+                <h2>Conheça a NATIVA Desenvolvimento</h2>
+
+                <p>
+                    A NATIVA Desenvolvimento nasceu durante uma
+                    atividade do Projeto Transforme-se, no Senac,
+                    quando três colegas se uniram para criar
+                    um projeto de desenvolvimento web.
+                </p>
+
+                <p>
+                    Nossa proposta é transformar ideias em
+                    experiências digitais modernas, funcionais
+                    e acessíveis.
+                </p>
+
+                <p>
+                    Trabalhamos com criatividade, tecnologia
+                    e colaboração para desenvolver soluções
+                    que fazem a diferença.
+                </p>
+
+            </div>
+
+            <!-- Destaques da equipe -->
+            <div class="sobre-destaques">
+
+                <div class="destaque">
+                    <span>01</span>
+                    <h3>Criatividade</h3>
+                    <p>Ideias transformadas em projetos digitais.</p>
+                </div>
+
+                <div class="destaque">
+                    <span>02</span>
+                    <h3>Tecnologia</h3>
+                    <p>Desenvolvimento com ferramentas modernas.</p>
+                </div>
+
+                <div class="destaque">
+                    <span>03</span>
+                    <h3>Colaboração</h3>
+                    <p>Trabalho em equipe em cada etapa.</p>
+                </div>
+
+            </div>
+
         </section>
 
-        
+
+        <!-- =====================================
+     SEÇÃO CONTATO
+     ===================================== -->
+
+        <section id="contato" class="contato-nativa">
+
+            <div class="contato-apresentacao">
+
+                <span class="secao-etiqueta">FALE CONOSCO</span>
+
+                <h2>Vamos transformar sua ideia em realidade?</h2>
+
+                <p>
+                    Tem um projeto em mente? Entre em contato
+                    com a NATIVA Desenvolvimento.
+                </p>
+
+                <p class="contato-observacao">
+                    Este formulário é uma demonstração
+                    das funcionalidades do site.
+                </p>
+
+            </div>
+
+            <!-- Formulário demonstrativo -->
+            <form id="form-contato" class="formulario-nativa">
+
+                <label for="nome">Seu nome</label>
+
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+                <label for="email">Seu e-mail</label>
+
+                <input type="email" id="email" name="email" placeholder="exemplo@email.com" required>
+
+                <label for="mensagem">Sua mensagem</label>
+
+                <textarea id="mensagem" name="mensagem" rows="5" placeholder="Conte um pouco sobre seu projeto..."
+                    required></textarea>
+
+                <button type="submit" class="botao-contato">
+                    Enviar mensagem
+                </button>
+
+                <!-- Mensagem exibida pelo JavaScript -->
+                <p id="status-contato" role="status" aria-live="polite"></p>
+
+            </form>
+
+        </section>
+
 
     </main>
 
-    <!-- RODAPÉ DO SITE -->
-     
+
+    <!--RODAPÉ DO SITE -->
+
     <footer class="rodape">
 
-         <!-- Logo do site -->
-            <img class="logo" src="Imagens/Logo.png" alt="NATIVA Desenvolvimento">
-        <div class="footer-social-midia">
-            <a href="a" class="footer-link" id="instagram">
+        <!-- Logo -->
+        <img class="logo-do-rodape" src="Imagens/Logo.png" alt="NATIVA Desenvolvimento">
 
-            </a>
+        <!-- Links de navegação -->
+        <nav class="menu-rodape">
+
+            <a href="#inicio">Início</a>
+
+            <a href="#servicos">Serviços</a>
+
+            <a href="#projetos">Projetos</a>
+
+            <a href="#sobre">Sobre</a>
+
+            <a href="#contato">Contato</a>
+
+        </nav>
+
+        <!-- Linha divisória e direitos autorais -->
+        <div class="rodape-final">
+            <p>
+                &copy; 2026 NATIVA Desenvolvimento.
+                Todos os direitos reservados.
+            </p>
         </div>
 
-        <img class="logo-footer" src="Imagens/Logo.png" alt="cade a logo">
-
     </footer>
+
+    <script src="JavaScript/site.js"></script>
 </body>
 
 </html>

@@ -95,18 +95,6 @@ body {
     height: auto;
 }
 
-/*logo do rodapé*/
-.logo-footer {
-    /* Largura da logo */
-    width: 270px;
-
-    /* Impede a logo de ultrapassar seu tamanho */
-    max-width: 100%;
-
-    /* Mantém a proporção */
-    height: auto;
-
-}
 
 /*MENU*/
 .menu {
