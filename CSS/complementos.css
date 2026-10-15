@@ -1,506 +1,598 @@
-/* ==========================================================
-   NATIVA DESENVOLVIMENTO - COMPLEMENTOS
-   Carrossel, Sobre, Contato, Rodapé e ajustes responsivos.
-   Este arquivo deve ser carregado DEPOIS do styles.css.
-   ========================================================== */
 
-/* Protege as seções contra larguras maiores do que a tela. */
-.servicos, .projetos, .carrossel, .container-servicos,
-.container-projetos, .sobre, .contato {
-    min-width: 0;
-}
+/* ==================================================
+   NATIVA DESENVOLVIMENTO
+   CSS COMPLEMENTAR - COMPLEMENTOS.CSS
+   ================================================== */
 
-/* ==========================================================
-   1. CARROSSEL - APROVEITA O HTML QUE VOCE JA TEM
-   ========================================================== */
 
-.projetos {
-    align-items: center;
-    gap: 35px;
-}
+/* ==================================================
+   1. CARROSSEL DE PROJETOS
+   ================================================== */
+
+/* Área principal do carrossel */
 
 .carrossel {
     position: relative;
+
     flex: 1 1 700px;
+
     width: 100%;
     max-width: 920px;
     min-width: 0;
+
+    /* Espaço para os botões laterais */
     padding: 0 42px;
-    overflow: hidden; /* Esconde os cards fora da area visivel. */
+
+    /* Esconde os cards fora da área visível */
+    overflow: hidden;
 }
 
+
+/* =====================================
+   FAIXA DOS PROJETOS
+   ===================================== */
+
 .container-projetos {
+
+    /* Cards organizados horizontalmente */
     display: flex;
     flex-wrap: nowrap;
+
+    /* Espaço entre os cards */
     gap: 18px;
+
     width: 100%;
+
+    /* Fundo transparente para mostrar o gradiente */
+    background: transparent;
+
+    /* Movimento suave */
     transition: transform 0.4s ease;
 }
 
+
+/* =====================================
+   CARDS DOS PROJETOS
+   ===================================== */
+
 .quadrado1 {
-    flex: 0 0 calc((100% - 36px) / 3); /* 3 cards no desktop */
+
+    /* Três cards no computador */
+    flex: 0 0 calc((100% - 36px) / 3);
+
     min-width: 0;
     min-height: 260px;
+
     margin: 0;
     padding: 12px;
+
+    /* Bordas */
+    border: 1px solid #225CBD;
     border-radius: 12px;
-    border: 1px solid #225cbd;
-    background: linear-gradient(145deg, #104694, #080D3D);
-    color: #fff;
-    overflow: hidden;
+
+    /* Fundo dos cards */
+    background: linear-gradient(
+        145deg,
+        #104694,
+        #080D3D
+    );
+
+    /* Textos */
+    color: #FFFFFF;
+
+    /* Organização interna */
     display: flex;
     flex-direction: column;
     gap: 12px;
+
+    /* Impede imagens de sair do card */
+    overflow: hidden;
+
+    /* Efeito */
     transition: box-shadow 0.3s ease;
 }
+
+
+/* Sombra ao passar o mouse */
 
 .quadrado1:hover {
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
 }
 
+
+/* Link da imagem */
+
 .quadrado1 > a {
     display: block;
+
     width: 100%;
     height: 175px;
+
     overflow: hidden;
+
     border-radius: 8px;
 }
 
-/* Sobrescreve a regra generica img { width:100%;height:100% }. */
-.quadrado1 > img {
-    display: block;
-    width: 100%;
-    height: 175px;
-    object-fit: cover;
-    border-radius: 8px;
-}
+
+/* Imagem dentro do link */
 
 .quadrado1 > a > img {
     display: block;
+
     width: 100%;
     height: 100%;
+
     object-fit: cover;
+
     transition: transform 0.3s ease;
 }
 
+
+/* Imagem diretamente dentro do card */
+
+.quadrado1 > img {
+    display: block;
+
+    width: 100%;
+    height: 175px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* Aproximação suave das imagens */
+
+.quadrado1:hover img {
+    transform: scale(1.05);
+}
+
+
+/* Títulos dos projetos */
+
 .quadrado1 h3 {
     margin: 0;
+
     font-size: 15px;
     line-height: 1.4;
 }
 
+
+/* Descrição dos projetos */
+
 .quadrado1 p {
+    color: #D9DCE8;
+
     font-size: 12px;
-    color: #d9dce8;
 }
 
-/* As duas caixas vazias recebem um aviso de "em breve" pelo JS. */
+
+/* =====================================
+   PROJETOS EM BREVE
+   ===================================== */
+
 .projeto-em-breve {
     display: grid;
     place-items: center;
+
     height: 175px;
-    border: 1px dashed rgba(255,255,255,0.45);
+
+    border: 1px dashed rgba(255, 255, 255, 0.45);
     border-radius: 8px;
-    color: #c2f7b0;
+
     background: rgba(5, 10, 47, 0.45);
+
+    color: #C2F7B0;
+
     font-weight: 600;
 }
 
-/* Sao os botoes existentes: #anterior e #proximo. */
+
+/* =====================================
+   BOTÕES DO CARROSSEL
+   ===================================== */
+
 .carrossel #anterior,
 .carrossel #proximo {
+
+    /* Posição das setas */
     position: absolute;
+
     top: 50%;
     transform: translateY(-50%);
+
+    /* Centraliza as setas */
     display: flex;
     align-items: center;
     justify-content: center;
+
+    /* Tamanho */
     width: 34px;
     height: 44px;
+
     padding: 0;
     margin: 0;
-    border: 1px solid rgba(255,255,255,0.35);
+
+    /* Aparência */
+    background-color: #0B1048;
+
+    color: #FFFFFF;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
     border-radius: 8px;
-    color: #fff;
-    background: #0B1048;
+
+    /* Ícone */
     font-size: 23px;
+
+    /* Interação */
     cursor: pointer;
+
     z-index: 3;
 }
 
-.carrossel #anterior { left: 3px; }
-.carrossel #proximo { right: 3px; }
+
+/* Seta anterior */
+
+.carrossel #anterior {
+    left: 3px;
+}
+
+
+/* Seta próximo */
+
+.carrossel #proximo {
+    right: 3px;
+}
+
+
+/* Seta desativada */
 
 .carrossel button:disabled {
     opacity: 0.35;
+
     cursor: not-allowed;
 }
 
-/* ==========================================================
-   2. SECAO SOBRE / NOSSA ORIGEM
-   ========================================================== */
 
-.sobre {
-    background: #f5f7fc;
-    color: #0B1048;
-    padding: 85px 7%;
+
+/* ==================================================
+   2. NOSSA HISTÓRIA
+   ================================================== */
+
+/* Fundo da seção */
+
+.sobre-historia {
+    background-color: #080D3D;
+
+    color: white;
+
+    padding: 90px 7%;
 }
 
-.sobre-conteudo {
-    max-width: 1160px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    align-items: center;
-    gap: 65px;
+
+/* =====================================
+   APRESENTAÇÃO DA NATIVA
+   ===================================== */
+
+.sobre-topo {
+    max-width: 850px;
+
+    margin-bottom: 55px;
 }
 
-.etiqueta-secao {
-    color: #168c35;
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
 
-.sobre h2, .contato h2 {
-    font-size: clamp(28px, 3.2vw, 42px);
-    line-height: 1.2;
-    margin: 14px 0 24px;
-}
+/* Frase: Conheça nossa história */
 
-.sobre p {
-    color: #354061;
-    font-size: 16px;
-    line-height: 1.8;
-    margin-bottom: 16px;
-}
-
-.sobre-destaque {
-    border-radius: 18px;
-    padding: 35px;
-    background: linear-gradient(145deg, #0B1048, #104694);
-    color: #fff;
-    box-shadow: 0 16px 35px rgba(8,13,61,0.15);
-}
-
-.sobre-destaque h3 {
-    color: #66df43;
-    font-size: 22px;
-    margin-bottom: 14px;
-}
-
-.sobre-destaque p { color: #e4eaf8; margin: 0; }
-
-/* ==========================================================
-   3. CONTATO
-   ========================================================== */
-
-.contato {
-    background: linear-gradient(125deg, #0B1048, #081a55);
-    color: #fff;
-    padding: 85px 7%;
-}
-
-.contato-conteudo {
-    max-width: 1160px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 55px;
-    align-items: start;
-}
-
-.contato .etiqueta-secao { color: #66df43; }
-
-.contato-texto p {
-    color: #d9dce8;
-    max-width: 450px;
-    line-height: 1.8;
-}
-
-.contato-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
-
-.contato-links a {
-    display: inline-block;
-    text-decoration: none;
-    color: #fff;
-    border: 1px solid rgba(255,255,255,0.35);
-    border-radius: 8px;
-    padding: 12px 18px;
-    font-size: 14px;
-    transition: background 0.2s ease;
-}
-
-.contato-links a:hover { background: rgba(255,255,255,0.1); }
-
-.form-contato {
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.14);
-    padding: 30px;
-    border-radius: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.form-contato label { font-size: 14px; font-weight: 600; }
-
-.form-contato input,
-.form-contato textarea {
-    width: 100%;
-    padding: 13px 14px;
-    background: #fff;
-    color: #0B1048;
-    border: 1px solid #c8d2e5;
-    border-radius: 8px;
-    font: inherit;
-    font-size: 14px;
-}
-
-.form-contato textarea { resize: vertical; min-height: 115px; }
-
-.form-contato button {
-    width: 100%;
-    min-height: 48px;
-    padding: 12px 20px;
-    background: #58C72B;
-    border: none;
-    color: #08123d;
-    border-radius: 8px;
-    font-family: inherit;
-    font-size: 15px;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.form-contato button:hover { background: #73e54a; }
-
-#status-contato { color: #d9dce8; font-size: 13px; line-height: 1.5; }
-
-/* ==========================================================
-   4. RODAPE - CENTRALIZA A LOGO E ORGANIZA OS LINKS
-   ========================================================== */
-
-footer.rodape,
-footer.cabecalho2 {
-    background: #080D3D;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 22px;
-    min-height: 200px;
-    height: auto;
-    padding: 45px 24px 22px;
-    text-align: center;
-}
-
-footer.rodape .logo-do-rodape,
-footer.rodape .logo-footer,
-footer.cabecalho2 .logo-do-rodape,
-footer.cabecalho2 .logo-footer {
+.sobre-topo span {
     display: block;
-    width: 230px;
-    max-width: 80vw;
-    height: auto;
-    object-fit: contain;
-    background: none;
-}
 
-.rodape-menu {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px 26px;
-}
+    color: #58C72B;
 
-.rodape-menu a { color: #e4eaf8; text-decoration: none; font-size: 14px; }
-.rodape-menu a:hover { color: #66df43; }
+    font-size: 17px;
+    font-weight: 700;
 
-.rodape-direitos {
-    width: min(100%, 1060px);
-    margin: 8px auto 0;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255,255,255,0.18);
-    color: #aebbd7;
-    font-size: 12px;
-}
+    letter-spacing: 1px;
 
-/* ==========================================================
-   5. MENU PARA CELULAR (BOTAO CRIADO PELO JS)
-   ========================================================== */
-
-.menu-toggle {
-    display: none;
-    width: 42px;
-    height: 42px;
-    border-radius: 8px;
-    border: 1px solid rgba(255,255,255,0.35);
-    background: transparent;
-    color: #fff;
-    font-family: inherit;
-    font-size: 25px;
-    cursor: pointer;
+    margin-bottom: 20px;
 }
 
 
-/* =========================================
-   NATIVA - CORREÇÕES DAS NOVAS SEÇÕES
-   ========================================= */
+/* Título principal */
 
-/* SEÇÃO SOBRE */
+.sobre-topo h2 {
+    font-size: 45px;
 
-.sobre-nativa {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    line-height: 1.2;
+
+    margin-bottom: 20px;
+}
+
+
+/* Parte verde do título */
+
+.sobre-topo h2 strong {
+    color: #58C72B;
+}
+
+
+/* Descrição abaixo do título */
+
+.sobre-topo p {
+    color: #D9DCE8;
+
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+/* =====================================
+   HISTÓRIA EM DUAS COLUNAS
+   ===================================== */
+
+.sobre-textos {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
     gap: 60px;
 
-    padding: 90px 70px;
-    background-color: #080D3D;
-    color: white;
+    margin-bottom: 55px;
 }
 
-.sobre-conteudo {
-    flex: 1;
-    max-width: 600px;
+
+/* Títulos das colunas */
+
+.sobre-textos h3 {
+    color: #FFFFFF;
+
+    font-size: 23px;
+
+    margin-bottom: 20px;
 }
 
-.secao-etiqueta {
-    color: #58C72B;
-    font-size: 14px;
-    font-weight: 600;
-}
 
-.sobre-conteudo h2 {
-    font-size: 36px;
-    margin: 20px 0;
-}
+/* Parágrafos das colunas */
 
-.sobre-conteudo p {
+.sobre-textos p {
     color: #D9DCE8;
+
+    font-size: 16px;
     line-height: 1.8;
-    margin-bottom: 15px;
+
+    margin-bottom: 18px;
 }
 
-/* CARDS DA SEÇÃO SOBRE */
 
-.sobre-destaques {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+/* =====================================
+   CRÉDITOS DO PROJETO
+   ===================================== */
 
-    flex: 1;
-    max-width: 400px;
+.sobre-creditos {
+
+    /* Dois cards lado a lado */
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+
+    margin-bottom: 40px;
 }
 
-.destaque {
-    background-color: #0B1048;
+
+/* Aparência dos cards */
+
+.credito-card {
+    background-color: #101B50;
+
     border: 1px solid #284883;
     border-radius: 12px;
 
-    padding: 25px;
-    color: white;
+    padding: 30px;
 }
 
-.destaque span {
+
+/* Títulos dos cards */
+
+.credito-card h3 {
     color: #58C72B;
-    font-weight: 700;
+
     font-size: 20px;
-}
 
-.destaque h3 {
-    margin: 10px 0;
-}
-
-.destaque p {
-    color: #D9DCE8;
-    font-size: 14px;
+    margin-bottom: 15px;
 }
 
 
-/* =========================================
-   SEÇÃO CONTATO
-   ========================================= */
+/* Desenvolvedores e parceiros */
+
+.credito-card p {
+    color: #FFFFFF;
+
+    font-size: 17px;
+
+    margin-bottom: 15px;
+}
+
+
+/* Descrição menor */
+
+.credito-card span {
+    color: #A9B4D0;
+
+    font-size: 13px;
+}
+
+
+/* =====================================
+   VALORES DA NATIVA
+   ===================================== */
+
+.sobre-valores {
+    display: flex;
+
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 35px;
+
+    padding-top: 30px;
+
+    border-top: 1px solid #284883;
+}
+
+
+/* Criatividade, Tecnologia e Colaboração */
+
+.sobre-valores span {
+    color: #58C72B;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+}
+
+
+
+/* ==================================================
+   3. CONTATO
+   ================================================== */
 
 .contato-nativa {
+
+    /* Texto e formulário lado a lado */
     display: flex;
+
     align-items: center;
     justify-content: center;
+
     gap: 70px;
 
     padding: 90px 70px;
 
+    /* Fundo do contato */
     background: linear-gradient(
         135deg,
         #0B1048,
         #103A7A
     );
 
-    color: white;
+    color: #FFFFFF;
 }
 
-/* TEXTOS DO CONTATO */
+
+/* =====================================
+   APRESENTAÇÃO DO CONTATO
+   ===================================== */
 
 .contato-apresentacao {
     flex: 1;
+
     max-width: 480px;
 }
 
+
+/* Frase verde acima do título */
+
+.secao-etiqueta {
+    display: inline-block;
+
+    color: #58C72B;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 18px;
+}
+
+
+/* Título do contato */
+
 .contato-apresentacao h2 {
     font-size: 36px;
+
     line-height: 1.3;
+
     margin: 20px 0;
 }
 
+
+/* Parágrafos */
+
 .contato-apresentacao p {
     color: #D9DCE8;
+
     font-size: 16px;
     line-height: 1.7;
 }
 
+
+/* Aviso de formulário demonstrativo */
+
 .contato-observacao {
     margin-top: 20px;
-    font-size: 13px !important;
+
+    font-size: 13px;
+    opacity: 0.8;
 }
 
 
-/* =========================================
-   FORMULÁRIO DE CONTATO
-   ========================================= */
+
+/* ==================================================
+   4. FORMULÁRIO DE CONTATO
+   ================================================== */
 
 .formulario-nativa {
+
+    /* Campos um abaixo do outro */
     display: flex;
     flex-direction: column;
+
     gap: 12px;
 
     flex: 1;
     max-width: 470px;
+    min-width: 0;
 
     padding: 35px;
 
+    /* Fundo do formulário */
     background-color: #080D3D;
+
+    /* Bordas */
     border: 1px solid #31518A;
     border-radius: 15px;
 }
 
+
+/* Nomes dos campos */
+
 .formulario-nativa label {
-    color: white;
+    color: #FFFFFF;
+
     font-size: 14px;
     font-weight: 500;
 }
 
-/* CAMPOS DO FORMULÁRIO */
+
+/* =====================================
+   CAMPOS DO FORMULÁRIO
+   ===================================== */
 
 .formulario-nativa input,
 .formulario-nativa textarea {
+
     width: 100%;
+
     padding: 14px;
 
     background-color: #101B50;
-    color: white;
+    color: #FFFFFF;
 
     border: 1px solid #37518A;
     border-radius: 8px;
@@ -509,27 +601,48 @@ footer.cabecalho2 .logo-footer {
     font-size: 14px;
 }
 
+
+/* Caixa de mensagem */
+
 .formulario-nativa textarea {
-    resize: vertical;
+
+    /* Impede alterar o tamanho manualmente */
+    resize: none;
+
+    /* Altura mínima */
+    min-height: 120px;
 }
+
+
+/* Textos dentro dos campos */
 
 .formulario-nativa input::placeholder,
 .formulario-nativa textarea::placeholder {
     color: #A6B0CF;
 }
 
+
+/* Destaque quando o campo recebe foco */
+
 .formulario-nativa input:focus,
 .formulario-nativa textarea:focus {
     outline: 2px solid #58C72B;
+
+    outline-offset: 1px;
 }
 
-/* BOTÃO ENVIAR */
+
+/* =====================================
+   BOTÃO ENVIAR MENSAGEM
+   ===================================== */
 
 .formulario-nativa .botao-contato {
+
     width: 100%;
     min-height: 48px;
 
     margin-top: 12px;
+
     padding: 12px 20px;
 
     background-color: #58C72B;
@@ -543,189 +656,168 @@ footer.cabecalho2 .logo-footer {
     font-weight: 700;
 
     cursor: pointer;
+
+    transition: background-color 0.3s ease;
 }
+
+
+/* Botão ao passar o mouse */
 
 .formulario-nativa .botao-contato:hover {
     background-color: #78E14F;
 }
 
+
+/* Mensagem de confirmação */
+
 #status-contato {
     color: #8FEB77;
+
     font-size: 13px;
+    line-height: 1.5;
 }
 
 
-/* =========================================
+
+/* ==================================================
+   5. RODAPÉ
+   ================================================== */
+
+footer.rodape {
+    background-color: #080D3D;
+
+    color: #FFFFFF;
+
+    /* Organização vertical */
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 25px;
+
+    min-height: 200px;
+    height: auto;
+
+    padding: 50px 30px 20px;
+
+    text-align: center;
+}
+
+
+/* =====================================
+   LOGO DO RODAPÉ
+   ===================================== */
+
+footer.rodape .logo-do-rodape {
+    display: block;
+
+    width: 220px;
+    max-width: 100%;
+
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+/* =====================================
    LINKS DO RODAPÉ
-   ========================================= */
+   ===================================== */
 
 .menu-rodape {
     display: flex;
-    flex-wrap: wrap;
+
+    align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+
     gap: 25px;
 }
 
+
+/* Links */
+
 .menu-rodape a {
     color: #D9DCE8;
+
     text-decoration: none;
     font-size: 14px;
+
+    transition: color 0.3s ease;
 }
+
+
+/* Links ao passar o mouse */
 
 .menu-rodape a:hover {
     color: #58C72B;
 }
 
+
+/* =====================================
+   DIREITOS AUTORAIS
+   ===================================== */
+
 .rodape-final {
     width: 100%;
-    padding-top: 20px;
+
     margin-top: 15px;
+    padding-top: 20px;
 
     border-top: 1px solid #34416D;
+
     text-align: center;
 }
 
+
+/* Texto final */
+
 .rodape-final p {
     color: #A9B4D0;
+
     font-size: 12px;
 }
 
 
-/* =========================================
-   RESPONSIVIDADE - TABLET
-   ========================================= */
 
-@media (max-width: 1024px) {
+/* ==================================================
+   6. MENU MOBILE
+   ================================================== */
 
-    .sobre-nativa,
-    .contato-nativa {
-        padding: 60px 35px;
-        gap: 35px;
-    }
+/* Botão criado pelo JavaScript */
 
-    .sobre-conteudo h2,
-    .contato-apresentacao h2 {
-        font-size: 30px;
-    }
+.menu-toggle {
+
+    /* Escondido no computador */
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 8px;
+
+    background: transparent;
+    color: #FFFFFF;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 25px;
+
+    cursor: pointer;
 }
 
 
-/* =========================================
-   RESPONSIVIDADE - CELULAR
-   ========================================= */
+/*
+   IMPORTANTE:
 
-@media (max-width: 820px) {
+   Nenhum gradiente individual deve
+   ser aplicado em .servicos ou .projetos.
 
-    /* CABEÇALHO */
+   O fundo azul e branco pertence à
+   classe .caixa-seçao no styles.css.
 
-    .cabecalho {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        height: auto;
-        min-height: 100px;
-        padding: 20px;
-        gap: 18px;
-    }
-
-    .cabecalho .logo {
-        width: 200px;
-        height: auto;
-    }
-
-    /* Mantém o menu visível em telas menores */
-
-    .cabecalho .menu {
-        display: flex !important;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-
-        width: 100%;
-        margin: 0;
-        gap: 12px 20px;
-    }
-
-    .cabecalho .menu a {
-        font-size: 12px;
-    }
-
-    /* Esconde o botão automático do menu mobile,
-       pois vamos usar os links visíveis por enquanto */
-
-    .menu-toggle {
-        display: none !important;
-    }
-
-
-    /* SOBRE E CONTATO */
-
-    .sobre-nativa,
-    .contato-nativa {
-        flex-direction: column;
-        padding: 55px 25px;
-        gap: 35px;
-    }
-
-    .sobre-conteudo,
-    .sobre-destaques,
-    .contato-apresentacao,
-    .formulario-nativa {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .sobre-conteudo h2,
-    .contato-apresentacao h2 {
-        font-size: 28px;
-    }
-
-    .formulario-nativa {
-        padding: 25px 20px;
-    }
-
-    .menu-rodape {
-        gap: 12px 18px;
-    }
-
-    .menu-rodape a {
-        font-size: 12px;
-    }
-}
-
-
-/* =========================================
-   CELULARES PEQUENOS
-   ========================================= */
-
-@media (max-width: 480px) {
-
-    .cabecalho .logo {
-        width: 180px;
-    }
-
-    .cabecalho .menu {
-        gap: 10px 14px;
-    }
-
-    .cabecalho .menu a {
-        font-size: 11px;
-    }
-
-    .sobre-nativa,
-    .contato-nativa {
-        padding: 45px 18px;
-    }
-
-    .sobre-conteudo h2,
-    .contato-apresentacao h2 {
-        font-size: 25px;
-    }
-
-    .formulario-nativa {
-        padding: 22px 16px;
-    }
-}
+   A responsividade fica exclusivamente
+   no arquivo responsividade.css.
+*/

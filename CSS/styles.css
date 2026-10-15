@@ -1,193 +1,175 @@
-/* Remove margens e espaçamentos padrões do navegador */
+
+/* ==================================================
+   NATIVA DESENVOLVIMENTO
+   CSS PRINCIPAL - STYLES.CSS
+   ================================================== */
+
+
+/* ==================================================
+   1. CONFIGURAÇÃO GERAL
+   ================================================== */
+
+/* Remove margens e espaçamentos do navegador */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
-/* Rolagem suave ao clicar no menu */
+/* Rolagem suave ao clicar nos links */
+
 html {
     scroll-behavior: smooth;
 }
 
 /* Configuração geral da página */
+
 body {
     font-family: "Poppins", sans-serif;
-    /*background-color: #0B1048;*/
-    background: hsla(0, 0%, 90%, 1);
-
-    background: hsla(0, 0%, 90%, 1);
-
-    background: linear-gradient(90deg, hsla(0, 0%, 90%, 1) 0%, hsla(235, 73%, 16%, 1) 52%);
-
-    background: -moz-linear-gradient(90deg, hsla(0, 0%, 90%, 1) 0%, hsla(235, 73%, 16%, 1) 52%);
-
-    background: -webkit-linear-gradient(90deg, hsla(0, 0%, 90%, 1) 0%, hsla(235, 73%, 16%, 1) 52%);
-
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#E5E5E5", endColorstr="#0B1048", GradientType=1);
-    /* Evita barra horizontal indesejada */
+    background-color: #080D3D;
     overflow-x: hidden;
 }
 
-/*CABEÇALHO */
+
+/* ==================================================
+   2. CABEÇALHO
+   ================================================== */
 
 .cabecalho {
 
-    /* Azul principal do NATIVA */
+    /* Azul principal da NATIVA */
     background-color: #0B1048;
 
-    /* Altura do cabeçalho */
+    /* Altura */
     height: 110px;
 
     /* Logo e menu lado a lado */
     display: flex;
-
-    /* Centraliza verticalmente */
     align-items: center;
 
     /* Espaçamento interno */
     padding: 0 70px;
 
-    /* Mantém o cabeçalho acima dos outros elementos */
+    /* Mantém o cabeçalho acima das seções */
     position: relative;
     z-index: 10;
 }
 
-.cabecalho2 {
 
-    /* Azul principal do NATIVA */
-    background-color: #0B1048;
+/* =====================================
+   LOGO
+   ===================================== */
 
-    /* Altura do cabeçalho */
-    height: 110px;
-
-    /* Logo e menu lado a lado */
-    display: flex;
-
-    /* Centraliza verticalmente */
-    align-items: center;
-
-    /* Espaçamento interno */
-    padding: 0 70px;
-
-    /* Mantém o cabeçalho acima dos outros elementos */
-    position: relative;
-    z-index: 10;
-
-
-}
-
-
-
-
-/*LOGO */
-
-.logo {
-
-    /* Largura da logo */
+.cabecalho .logo {
     width: 270px;
-
-    /* Impede a logo de ultrapassar seu tamanho */
     max-width: 100%;
-
-    /* Mantém a proporção */
     height: auto;
+
+    object-fit: contain;
 }
 
 
-/*MENU*/
+/* =====================================
+   MENU DE NAVEGAÇÃO
+   ===================================== */
+
 .menu {
 
     /* Links lado a lado */
     display: flex;
+    align-items: center;
 
     /* Espaço entre os links */
     gap: 55px;
 
-    /* Distância entre logo e menu */
+    /* Distância da logo */
     margin-left: 80px;
 }
 
-/* Links */
-.menu a {
 
+/* Links do menu */
+
+.menu a {
     color: #FFFFFF;
 
     text-decoration: none;
-
-    font-size: 15px;
-
-    font-weight: 500;
-
     text-transform: uppercase;
 
-    /* Animação para efeitos futuros */
-    transition: 0.3s;
+    font-size: 15px;
+    font-weight: 500;
+
+    transition: color 0.3s ease;
 }
 
 
-/* Efeito quando passa o mouse */
-.menu a:hover {
+/* Efeito ao passar o mouse */
 
-    /* Verde presente na identidade do NATIVA */
+.menu a:hover {
     color: #58C72B;
 }
 
-/*PRIMEIRA SEÇÃO */
+
+/* ==================================================
+   3. PRIMEIRA SEÇÃO - INÍCIO
+   ================================================== */
 
 .inicio {
 
-    /*Permite posicionar a imagem dentro da seção. */
+    /* Permite posicionar a imagem como fundo */
     position: relative;
 
-    /* Centraliza o conteúdo verticalmente */
+    /* Centraliza os textos verticalmente */
     display: flex;
-
     align-items: center;
 
-    /* Altura principal da seção */
+    /* Altura principal */
     min-height: 540px;
 
-    /* Fundo azul escuro */
+    /* Fundo azul */
     background-color: #080D3D;
 
-    /*Esconde qualquer parte da imagem que ultrapasse a seção.*/
+    /* Evita que a imagem saia da seção */
     overflow: hidden;
 }
 
 
-/* TEXTOS DO HERO */
+/* =====================================
+   CONTEÚDO DA PRIMEIRA SEÇÃO
+   ===================================== */
 
 .conteudo-inicio {
 
-    /* Relative + z-index mantém o texto acima da imagem.*/
+    /* Coloca o texto acima da imagem */
     position: relative;
     z-index: 2;
-    /* Espaço disponível para os textos */
+
+    /* Espaço ocupado pelos textos */
     width: 55%;
+
     /* Distância da lateral esquerda */
     padding-left: 70px;
-
 }
 
 
-/*FRASE VERDE */
+/* Frase verde */
+
 .conteudo-inicio h3 {
     color: #58C72B;
+
     font-size: 20px;
     font-weight: 600;
+
     margin-bottom: 25px;
 }
 
 
-/*TÍTULO PRINCIPAL */
-.conteudo-inicio h1 {
+/* Título principal */
 
+.conteudo-inicio h1 {
     color: #FFFFFF;
 
     font-size: 48px;
-
     font-weight: 700;
 
     line-height: 1.15;
@@ -197,12 +179,13 @@ body {
     margin-bottom: 30px;
 }
 
-/*TEXTO DE APRESENTAÇÃO */
+
+/* Texto de apresentação */
+
 .conteudo-inicio p {
     color: #D9DCE8;
 
     font-size: 17px;
-
     font-weight: 400;
 
     line-height: 1.7;
@@ -210,9 +193,14 @@ body {
     max-width: 650px;
 }
 
-/* IMAGEM DO HERO */
+
+/* =====================================
+   IMAGEM DE FUNDO
+   ===================================== */
+
 .imagem-inicio {
-    /* A imagem cobre toda a seção */
+
+    /* Ocupa toda a primeira seção */
     position: absolute;
 
     top: 0;
@@ -223,198 +211,227 @@ body {
 }
 
 
-/* Fotografia */
+/* Configuração da imagem */
+
 .imagem-inicio img {
+    display: block;
 
-    /* Faz a imagem ocupar toda a largura */
     width: 100%;
-
-    /* Faz a imagem ocupar toda a altura */
     height: 100%;
 
-    /* Preenche o espaço mantendo a proporção da imagem */
+    /* Preserva proporção */
     object-fit: cover;
 
     /* Centraliza o enquadramento */
     object-position: center;
 }
 
-/* Camada bem leve para integrar a imagem ao fundo */
+
+/* Camada transparente sobre a imagem */
+
 .imagem-inicio::after {
     content: "";
 
     position: absolute;
     inset: 0;
 
-    background: linear-gradient(to right,
-            rgba(8, 13, 61, 0.30) 0%,
-            rgba(8, 13, 61, 0.10) 35%,
-            rgba(8, 13, 61, 0) 60%);
+    background: linear-gradient(
+        to right,
+        rgba(8, 13, 61, 0.30) 0%,
+        rgba(8, 13, 61, 0.10) 35%,
+        rgba(8, 13, 61, 0) 60%
+    );
 }
 
-/*/////Sections/////*/
-.caixa-seçao {
-    background: linear-gradient(rgb(0, 100, 130), rgb(11, 205, 0));
-    padding: 1px;
+
+/* ==================================================
+   4. FUNDO GERAL - SERVIÇOS E PROJETOS
+   ================================================== */
+
+/*
+   Este é o gradiente escolhido.
+
+   A classe deve envolver as duas seções
+   no HTML para formar um fundo contínuo.
+
+   Os dois nomes são aceitos:
+   caixa-seçao (nome que você usava)
+   caixa-secao (nome sem acento)
+*/
+
+.caixa-seçao,
+.caixa-secao {
+
+    background: linear-gradient(
+        90deg,
+        #080D3D 0%,
+        #123A84 48%,
+        #DCE7F7 100%
+    );
+
+    /* Espaço acima e abaixo das seções */
+    padding: 35px 0;
 }
+
+
+/* As seções deixam o fundo do pai aparecer */
+
+.servicos,
+.projetos {
+    background: transparent;
+}
+
+
+/* ==================================================
+   5. SEÇÃO SERVIÇOS
+   ================================================== */
+
+.servicos {
+
+    /* Textos e cards lado a lado */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Espaçamento entre texto e cards */
+    gap: 35px;
+
+    /* Espaçamento interno */
+    padding: 55px 5%;
+
+    /* Sem margens externas */
+    margin: 0;
+
+    width: 100%;
+    min-width: 0;
+}
+
+
+/* =====================================
+   TEXTOS DOS SERVIÇOS
+   ===================================== */
 
 .conteudo-servicos {
     color: #FFFFFF;
 
     font-size: 15px;
-
     font-weight: 400;
 
     line-height: 1.7;
 
+    /* Espaço reservado para a descrição */
+    flex: 0 0 280px;
+
     max-width: 360px;
-
+    min-width: 0;
 }
 
-.servicos {
-    display: flex;
 
-    padding: 25px;
-
-    justify-content: center;
-
-    margin: 25px;
-
-    /*background-color: white;teste*/
-}
+/* ==================================================
+   6. CARDS DOS SERVIÇOS
+   ================================================== */
 
 .container-servicos {
+
+    /* Cards lado a lado */
     display: flex;
 
     gap: 20px;
 
+    /* Ocupa espaço disponível */
+    flex: 1;
+
     width: 100%;
+    min-width: 0;
 }
+
+
+/* Aparência dos cards */
 
 .quadrado {
-    width: 270px;
 
-    padding: 15px 10px;
+    /* Todos os cards ocupam espaços semelhantes */
+    flex: 1 1 0;
+    min-width: 0;
 
-    border: 1px solid rgba(11, 16, 72, 1);
+    /* Altura mínima */
+    min-height: 300px;
 
+    /* Espaçamento interno */
+    padding: 20px 15px;
+
+    /* Bordas */
+    border: 1px solid #225CBD;
     border-radius: 10px;
 
-    background: linear-gradient(0deg, rgba(11, 16, 72, 1) 0%, rgba(11, 67, 158, 1) 100%);
+    /* Gradiente azul do card */
+    background: linear-gradient(
+        180deg,
+        #104694 0%,
+        #0B1048 100%
+    );
 
-    color: white;
+    /* Textos */
+    color: #FFFFFF;
 
     text-align: left;
-
     font-size: 14px;
 
-    margin-left: 40px
+    /* Evita margens antigas */
+    margin: 0;
+
+    /* Animação */
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
 }
 
+
+/* Efeito de elevação */
+
 .quadrado:hover {
-    /*Efeito do quadrado subir um pouco! */
     transform: translateY(-10px);
+
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.20);
 }
+
+
+/* ==================================================
+   7. SEÇÃO PROJETOS
+   ================================================== */
+
+.projetos {
+
+    /* Descrição e carrossel lado a lado */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 35px;
+
+    /* Espaçamento interno */
+    padding: 55px 5%;
+
+    margin: 0;
+
+    width: 100%;
+    min-width: 0;
+}
+
+
+/* =====================================
+   TEXTOS DOS PROJETOS
+   ===================================== */
 
 .conteudo-projetos {
     color: #FFFFFF;
 
     font-size: 14px;
-
     font-weight: 400;
 
     line-height: 1.7;
 
+    flex: 0 0 280px;
+
     max-width: 360px;
-
-}
-
-
-.container-projetos {
-    display: flex;
-
-    gap: 20px;
-
-    width: 100%;
-
-    background-color: #080D3D;
-}
-
-
-.projetos {
-    display: flex;
-
-    padding: 25px;
-
-    margin: 25px;
-
-    justify-content: center;
-
-}
-
-
-.quadrado1 {
-    width: 270px;
-
-    padding: 10px 10px;
-
-    border: 1px solid rgba(11, 16, 72, 1);
-
-    border-radius: 10px;
-
-    background: linear-gradient(0deg, rgba(11, 16, 72, 1) 0%, rgba(11, 67, 158, 1) 100%);
-
-    color: white;
-
-    text-align: left;
-
-    font-size: 15px;
-
-    margin-left: 40px
-}
-
-.quadrado1 {
-    transition: 0.3;
-}
-
-.quadrado1:hover img {
-    transform: scale(1.08);
-}
-
-.quadrado1 {
-    overflow: hidden;
-}
-
-.carrossel {
-    right: 0;
-    position: relative;
-
-}
-
-button {
-    width: 25px;
-    border: none;
-    background-color: rgba(11, 16, 72, 1);
-    cursor: pointer;
-    font-size: 35px;
-    color: #FFFFFF;
-
-}
-
-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-#anterior {
-    left: 20px;
-    position: absolute;
-    border-radius: 5px;
-}
-
-#proximo {
-    right: 20px;
-    position: absolute;
-    border-radius: 5px;
+    min-width: 0;
 }

@@ -1,75 +1,51 @@
 
-/*NATIVA DESENVOLVIMENTO RESPONSIVIDADE*/
-/*1. TABLET - ATÉ 1024px */
+/* ==========================================================
+   NATIVA DESENVOLVIMENTO
+   RESPONSIVIDADE DO SITE
+   ========================================================== */
 
-@media (max-width: 1024px) {
+
+/* ==========================================================
+   1. NOTEBOOK E TELAS MÉDIAS - ATÉ 1150px
+   ========================================================== */
+
+@media (max-width: 1150px) {
 
     /* CABEÇALHO */
 
     .cabecalho {
-        height: auto;
-        min-height: 95px;
-        padding: 20px 30px;
-        gap: 20px;
+        padding: 0 35px;
+        gap: 15px;
     }
 
-    .logo {
-        width: 210px;
+    .cabecalho .logo {
+        width: 220px;
         height: auto;
     }
 
-    .menu {
-        margin-left: auto;
-        gap: 20px;
-        flex-wrap: wrap;
-        justify-content: center;
+    .cabecalho .menu {
+        gap: 25px;
+        margin-left: 25px;
     }
 
-    .menu a {
+    .cabecalho .menu a {
         font-size: 13px;
     }
 
 
     /* PRIMEIRA SEÇÃO */
 
-    .inicio {
-        min-height: 500px;
-    }
-
     .conteudo-inicio {
-        width: 70%;
-        padding-left: 40px;
-        padding-right: 20px;
-    }
-
-    .conteudo-inicio h3 {
-        font-size: 18px;
+        width: 65%;
+        padding-left: 45px;
     }
 
     .conteudo-inicio h1 {
-        font-size: 38px;
+        font-size: 40px;
     }
 
     .conteudo-inicio p {
-        font-size: 15px;
-    }
-
-    /* Mantém a imagem proporcional */
-
-    .imagem-inicio img {
-        object-fit: cover;
-        object-position: 60% center;
-    }
-
-    /* Degradê para facilitar a leitura */
-
-    .imagem-inicio::after {
-        background: linear-gradient(
-            to right,
-            #080D3D 0%,
-            rgba(8, 13, 61, 0.95) 35%,
-            rgba(8, 13, 61, 0.35) 100%
-        );
+        font-size: 16px;
     }
 
 
@@ -78,26 +54,29 @@
     .servicos {
         flex-direction: column;
         align-items: center;
-        margin: 20px;
-        padding: 20px;
+
         gap: 30px;
+        margin: 0;
+        padding: 55px 30px;
     }
 
     .conteudo-servicos {
-        max-width: 700px;
         width: 100%;
+        max-width: 720px;
         text-align: center;
     }
 
     .container-servicos {
-        flex-wrap: wrap;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        width: 100%;
+        max-width: 760px;
         gap: 20px;
     }
 
     .quadrado {
-        width: calc(50% - 20px);
-        max-width: 350px;
+        width: auto;
         margin-left: 0;
     }
 
@@ -107,87 +86,115 @@
     .projetos {
         flex-direction: column;
         align-items: center;
-        margin: 20px;
-        padding: 20px;
+
         gap: 30px;
+        margin: 0;
+        padding: 55px 30px;
     }
 
     .conteudo-projetos {
-        max-width: 700px;
         width: 100%;
+        max-width: 720px;
         text-align: center;
     }
 
     .carrossel {
+        flex: none;
         width: 100%;
-        max-width: 760px;
-        overflow: hidden;
+        max-width: 780px;
     }
 
-    .container-projetos {
-        width: 100%;
-        gap: 15px;
-    }
+    /* Dois cards visíveis */
 
-    .quadrado1 {
-        flex: 0 0 calc(50% - 8px);
-        margin-left: 0;
-        min-width: 0;
-    }
-
-
-    /* RODAPÉ */
-
-    .cabecalho2 {
-        height: auto;
-        min-height: 110px;
-        padding: 25px 30px;
-    }
-
-    .logo-footer {
-        width: 220px;
-        height: auto;
+    .carrossel .quadrado1 {
+        flex: 0 0 calc((100% - 18px) / 2);
     }
 
 }
 
 
-/*2. CELULAR - ATÉ 768px */
+/* ==========================================================
+   2. TABLET E TELAS MENORES - ATÉ 820px
+   ========================================================== */
 
-@media (max-width: 768px) {
+@media (max-width: 820px) {
 
-    /* CABEÇALHO */
+    /* =====================================
+       CABEÇALHO
+       ===================================== */
 
     .cabecalho {
-        flex-direction: column;
-        justify-content: center;
+        position: relative;
+
+        display: flex;
+        flex-direction: row;
         align-items: center;
-        padding: 20px;
-        gap: 20px;
+        justify-content: space-between;
+
+        height: auto;
+        min-height: 82px;
+
+        padding: 18px 22px;
     }
 
-    .logo {
-        width: 200px;
+    .cabecalho .logo {
+        width: 190px;
+        height: auto;
     }
 
-    .menu {
-        margin-left: 0;
+
+    /* BOTÃO DO MENU MOBILE */
+
+    .menu-toggle {
+        display: block;
+        flex-shrink: 0;
+    }
+
+
+    /* MENU FECHADO */
+
+    .cabecalho .menu {
+        display: none;
+
+        position: absolute;
+        top: 100%;
+        left: 0;
+
         width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 15px 20px;
+        margin: 0;
+        padding: 14px 22px 22px;
+
+        background-color: #0B1048;
+
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        z-index: 30;
+
+        box-shadow: 0 12px 15px rgba(0, 0, 0, 0.2);
     }
 
-    .menu a {
-        font-size: 12px;
+
+    /* MENU ABERTO PELO JAVASCRIPT */
+
+    .cabecalho.menu-aberto .menu {
+        display: flex;
+    }
+
+    .cabecalho .menu a {
+        padding: 11px 4px;
+        font-size: 14px;
     }
 
 
-    /* PRIMEIRA SEÇÃO */
+    /* =====================================
+       PRIMEIRA SEÇÃO
+       ===================================== */
 
     .inicio {
         min-height: 550px;
-        padding: 60px 0;
+        padding: 65px 0;
     }
 
     .conteudo-inicio {
@@ -197,167 +204,133 @@
 
     .conteudo-inicio h3 {
         font-size: 17px;
-        margin-bottom: 20px;
     }
 
     .conteudo-inicio h1 {
-        font-size: 34px;
-        line-height: 1.2;
-        margin-bottom: 25px;
+        font-size: clamp(30px, 5vw, 39px);
+        max-width: 610px;
     }
 
     .conteudo-inicio p {
         font-size: 15px;
-        line-height: 1.7;
     }
 
-    /* Imagem permanece no fundo */
 
-    .imagem-inicio {
-        width: 100%;
-        height: 100%;
-    }
+    /* Imagem do fundo */
 
     .imagem-inicio img {
-        object-fit: cover;
         object-position: 65% center;
     }
+
 
     /* Degradê mais escuro para leitura */
 
     .imagem-inicio::after {
         background: linear-gradient(
-            to right,
-            rgba(8, 13, 61, 0.96),
-            rgba(8, 13, 61, 0.80)
+            90deg,
+            rgba(8, 13, 61, 0.96) 0%,
+            rgba(8, 13, 61, 0.87) 52%,
+            rgba(8, 13, 61, 0.55) 100%
         );
     }
 
 
-    /* SERVIÇOS */
+    /* =====================================
+       NOSSA HISTÓRIA
+       ===================================== */
 
-    .servicos {
-        margin: 0;
-        padding: 50px 20px;
+    .sobre-historia {
+        padding: 65px 6%;
     }
 
-    .conteudo-servicos {
-        text-align: center;
-        max-width: 100%;
+    .sobre-topo h2 {
+        font-size: 34px;
     }
 
-    .container-servicos {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
+    /* Organiza a história em uma coluna */
 
-    .quadrado {
-        width: 100%;
-        max-width: 420px;
-        padding: 25px 20px;
-        margin-left: 0;
-    }
-
-
-    /* PROJETOS */
-
-    .projetos {
-        margin: 0;
-        padding: 40px 20px;
+    .sobre-textos {
+        grid-template-columns: 1fr;
         gap: 25px;
     }
 
-    .conteudo-projetos {
-        width: 100%;
-        text-align: center;
-    }
+    /* Cards dos créditos em uma coluna */
 
-    .carrossel {
-        width: 100%;
-        overflow: hidden;
-    }
-
-    .container-projetos {
-        display: flex;
-        gap: 15px;
-    }
-
-    .quadrado1 {
-        flex: 0 0 100%;
-        width: 100%;
-        margin-left: 0;
-    }
-
-    /* Botões do carrossel */
-
-    #anterior {
-        left: 5px;
-    }
-
-    #proximo {
-        right: 5px;
-    }
-
-
-    /* RODAPÉ */
-
-    .cabecalho2 {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 30px 20px;
+    .sobre-creditos {
+        grid-template-columns: 1fr;
         gap: 20px;
     }
 
-    .logo-footer {
-        width: 200px;
-        height: auto;
+    .sobre-valores {
+        gap: 20px;
     }
 
-    /* Caso adicione menu ao rodapé */
 
-    .cabecalho2 .menu {
-        margin-left: 0;
-        justify-content: center;
-        flex-wrap: wrap;
+    /* =====================================
+       CONTATO
+       ===================================== */
+
+    .contato-nativa {
+        flex-direction: column;
+
+        padding: 65px 6%;
+        gap: 35px;
+    }
+
+    .contato-apresentacao {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .contato-apresentacao h2 {
+        font-size: 30px;
+    }
+
+    .formulario-nativa {
+        width: 100%;
+        max-width: 550px;
+
+        padding: 25px;
+    }
+
+
+    /* =====================================
+       RODAPÉ
+       ===================================== */
+
+    footer.rodape {
+        padding: 40px 20px 25px;
+    }
+
+    footer.rodape .logo-do-rodape {
+        width: 200px;
+    }
+
+    .menu-rodape {
+        gap: 15px;
     }
 
 }
 
 
-/*3. CELULARES PEQUENOS - ATÉ 480px */
+/* ==========================================================
+   3. CELULAR - ATÉ 600px
+   ========================================================== */
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
 
-    /* CABEÇALHO */
-
-    .cabecalho {
-        padding: 20px 15px;
-    }
-
-    .logo {
-        width: 180px;
-    }
-
-    .menu {
-        gap: 12px 15px;
-    }
-
-    .menu a {
-        font-size: 11px;
-    }
-
-
-    /* PRIMEIRA SEÇÃO */
+    /* =====================================
+       PRIMEIRA SEÇÃO
+       ===================================== */
 
     .inicio {
         min-height: 580px;
-        padding: 50px 0;
+        padding: 55px 0;
     }
 
     .conteudo-inicio {
-        padding: 0 20px;
+        width: 100%;
+        padding: 0 22px;
     }
 
     .conteudo-inicio h3 {
@@ -365,8 +338,154 @@
     }
 
     .conteudo-inicio h1 {
-        font-size: 29px;
-        line-height: 1.2;
+        font-size: clamp(26px, 7vw, 34px);
+    }
+
+    .conteudo-inicio p {
+        font-size: 14px;
+    }
+
+
+    /* =====================================
+       SERVIÇOS
+       ===================================== */
+
+    .servicos {
+        padding: 45px 18px;
+    }
+
+    /* Um card por linha */
+
+    .container-servicos {
+        grid-template-columns: 1fr;
+    }
+
+    .quadrado {
+        width: 100%;
+        margin: 0;
+        padding: 24px;
+    }
+
+
+    /* =====================================
+       PROJETOS
+       ===================================== */
+
+    .projetos {
+        padding: 45px 18px;
+    }
+
+    .carrossel {
+        width: 100%;
+        padding: 0 36px;
+    }
+
+    /* Um projeto visível por vez */
+
+    .carrossel .quadrado1 {
+        flex: 0 0 100%;
+    }
+
+    .quadrado1 > a {
+        height: 195px;
+    }
+
+    .quadrado1 > img {
+        height: 195px;
+    }
+
+    .projeto-em-breve {
+        height: 195px;
+    }
+
+
+    /* =====================================
+       NOSSA HISTÓRIA
+       ===================================== */
+
+    .sobre-historia {
+        padding: 60px 25px;
+    }
+
+    .sobre-topo h2 {
+        font-size: 30px;
+    }
+
+    .sobre-textos h3 {
+        font-size: 21px;
+    }
+
+    .sobre-textos p {
+        font-size: 15px;
+    }
+
+    .sobre-valores {
+        gap: 15px;
+    }
+
+    .sobre-valores span {
+        font-size: 12px;
+    }
+
+
+    /* =====================================
+       CONTATO
+       ===================================== */
+
+    .contato-nativa {
+        padding: 55px 22px;
+    }
+
+    .contato-apresentacao h2 {
+        font-size: 28px;
+    }
+
+    .formulario-nativa {
+        padding: 22px 18px;
+    }
+
+
+    /* =====================================
+       RODAPÉ
+       ===================================== */
+
+    .menu-rodape {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .menu-rodape a {
+        font-size: 12px;
+    }
+
+}
+
+
+/* ==========================================================
+   4. CELULARES PEQUENOS - ATÉ 480px
+   ========================================================== */
+
+@media (max-width: 480px) {
+
+    /* CABEÇALHO */
+
+    .cabecalho {
+        padding: 18px 15px;
+    }
+
+    .cabecalho .logo {
+        width: 170px;
+    }
+
+
+    /* PRIMEIRA SEÇÃO */
+
+    .conteudo-inicio {
+        padding: 0 20px;
+    }
+
+    .conteudo-inicio h1 {
+        font-size: 28px;
     }
 
     .conteudo-inicio p {
@@ -380,11 +499,6 @@
         padding: 40px 15px;
     }
 
-    .quadrado {
-        padding: 20px 15px;
-        font-size: 13px;
-    }
-
 
     /* PROJETOS */
 
@@ -392,248 +506,52 @@
         padding: 40px 15px;
     }
 
-    .quadrado1 {
-        padding: 10px;
+
+    /* NOSSA HISTÓRIA */
+
+    .sobre-historia {
+        padding: 50px 20px;
+    }
+
+    .sobre-topo h2 {
+        font-size: 28px;
+    }
+
+    .credito-card {
+        padding: 22px;
+    }
+
+
+    /* CONTATO */
+
+    .contato-nativa {
+        padding: 45px 18px;
+    }
+
+    .formulario-nativa {
+        padding: 20px 16px;
     }
 
 
     /* RODAPÉ */
 
-    .cabecalho2 {
-        padding: 25px 15px;
-    }
-
-    .logo-footer {
+    footer.rodape .logo-do-rodape {
         width: 180px;
     }
 
 }
 
-/* ==========================================================
-   6. RESPONSIVIDADE
-   ========================================================== */
-
-@media (max-width: 1150px) {
-    .servicos, .projetos {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-        margin: 0;
-        padding: 55px 30px;
-    }
-
-    .conteudo-servicos, .conteudo-projetos {
-        width: 100%;
-        max-width: 720px;
-        text-align: center;
-    }
-
-    .container-servicos {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 20px;
-    }
-
-    .quadrado { width: auto; margin-left: 0; }
-
-    .carrossel { flex: none; width: 100%; max-width: 780px; }
-    .quadrado1 { flex-basis: calc((100% - 18px) / 2); }
-}
-
-@media (max-width: 820px) {
-    /* O menu principal vira um botao que abre/fecha. */
-    .cabecalho {
-        position: relative;
-        min-height: 82px;
-        height: auto;
-        padding: 18px 22px;
-        justify-content: space-between;
-    }
-
-    .cabecalho .logo { width: 190px; height: auto; }
-    .menu-toggle { display: block; flex-shrink: 0; }
-
-    .cabecalho .menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        margin: 0;
-        padding: 14px 22px 22px;
-        background: #0B1048;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        z-index: 30;
-        box-shadow: 0 12px 15px rgba(0,0,0,0.2);
-    }
-
-    .cabecalho.menu-aberto .menu { display: flex; }
-    .cabecalho .menu a { padding: 11px 4px; font-size: 14px; }
-
-    /* O texto permanece legivel sobre a imagem. */
-    .inicio { min-height: 550px; padding: 65px 0; }
-    .conteudo-inicio { width: 100%; padding: 0 30px; }
-    .conteudo-inicio h3 { font-size: 17px; }
-    .conteudo-inicio h1 { font-size: clamp(30px, 5vw, 39px); max-width: 610px; }
-    .conteudo-inicio p { font-size: 15px; }
-    .imagem-inicio img { object-position: 65% center; }
-    .imagem-inicio::after {
-        background: linear-gradient(90deg,
-            rgba(8,13,61,0.96) 0%,
-            rgba(8,13,61,0.87) 52%,
-            rgba(8,13,61,0.55) 100%);
-    }
-
-    .sobre-conteudo, .contato-conteudo {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .sobre, .contato { padding: 65px 6%; }
-    .contato-texto p { max-width: none; }
-}
-
-@media (max-width: 600px) {
-    .servicos, .projetos { padding: 45px 18px; }
-
-    .container-servicos { grid-template-columns: 1fr; }
-
-    .quadrado { width: 100%; margin: 0; padding: 24px; }
-
-    .carrossel { padding: 0 36px; }
-    .quadrado1 { flex-basis: 100%; }
-    .quadrado1 > a { height: 195px; }
-    .quadrado1 > img { height: 195px; }
-    .projeto-em-breve { height: 195px; }
-
-    .conteudo-inicio { padding: 0 22px; }
-    .conteudo-inicio h1 { font-size: clamp(26px, 7vw, 34px); }
-    .conteudo-inicio h3 { font-size: 15px; }
-    .conteudo-inicio p { font-size: 14px; }
-
-    .form-contato { padding: 22px 18px; }
-}
-
-/* Respeita configuracoes do dispositivo que evitam animacoes. */
-@media (prefers-reduced-motion: reduce) {
-    .container-projetos { transition: none; }
-}
 
 /* ==========================================================
-   6. RESPONSIVIDADE
+   5. ACESSIBILIDADE
    ========================================================== */
 
-@media (max-width: 1150px) {
-    .servicos, .projetos {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-        margin: 0;
-        padding: 55px 30px;
-    }
+/* Reduz animações quando o dispositivo solicita */
 
-    .conteudo-servicos, .conteudo-projetos {
-        width: 100%;
-        max-width: 720px;
-        text-align: center;
-    }
-
-    .container-servicos {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 20px;
-    }
-
-    .quadrado { width: auto; margin-left: 0; }
-
-    .carrossel { flex: none; width: 100%; max-width: 780px; }
-    .quadrado1 { flex-basis: calc((100% - 18px) / 2); }
-}
-
-@media (max-width: 820px) {
-    /* O menu principal vira um botao que abre/fecha. */
-    .cabecalho {
-        position: relative;
-        min-height: 82px;
-        height: auto;
-        padding: 18px 22px;
-        justify-content: space-between;
-    }
-
-    .cabecalho .logo { width: 190px; height: auto; }
-    .menu-toggle { display: block; flex-shrink: 0; }
-
-    .cabecalho .menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        margin: 0;
-        padding: 14px 22px 22px;
-        background: #0B1048;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        z-index: 30;
-        box-shadow: 0 12px 15px rgba(0,0,0,0.2);
-    }
-
-    .cabecalho.menu-aberto .menu { display: flex; }
-    .cabecalho .menu a { padding: 11px 4px; font-size: 14px; }
-
-    /* O texto permanece legivel sobre a imagem. */
-    .inicio { min-height: 550px; padding: 65px 0; }
-    .conteudo-inicio { width: 100%; padding: 0 30px; }
-    .conteudo-inicio h3 { font-size: 17px; }
-    .conteudo-inicio h1 { font-size: clamp(30px, 5vw, 39px); max-width: 610px; }
-    .conteudo-inicio p { font-size: 15px; }
-    .imagem-inicio img { object-position: 65% center; }
-    .imagem-inicio::after {
-        background: linear-gradient(90deg,
-            rgba(8,13,61,0.96) 0%,
-            rgba(8,13,61,0.87) 52%,
-            rgba(8,13,61,0.55) 100%);
-    }
-
-    .sobre-conteudo, .contato-conteudo {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .sobre, .contato { padding: 65px 6%; }
-    .contato-texto p { max-width: none; }
-}
-
-@media (max-width: 600px) {
-    .servicos, .projetos { padding: 45px 18px; }
-
-    .container-servicos { grid-template-columns: 1fr; }
-
-    .quadrado { width: 100%; margin: 0; padding: 24px; }
-
-    .carrossel { padding: 0 36px; }
-    .quadrado1 { flex-basis: 100%; }
-    .quadrado1 > a { height: 195px; }
-    .quadrado1 > img { height: 195px; }
-    .projeto-em-breve { height: 195px; }
-
-    .conteudo-inicio { padding: 0 22px; }
-    .conteudo-inicio h1 { font-size: clamp(26px, 7vw, 34px); }
-    .conteudo-inicio h3 { font-size: 15px; }
-    .conteudo-inicio p { font-size: 14px; }
-
-    .form-contato { padding: 22px 18px; }
-}
-
-/* Respeita configuracoes do dispositivo que evitam animacoes. */
 @media (prefers-reduced-motion: reduce) {
-    .container-projetos { transition: none; }
-}
 
+    .container-projetos {
+        transition: none;
+    }
+
+}
