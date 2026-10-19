@@ -1,10 +1,3 @@
-/* ==========================================================
-   NATIVA DESENVOLVIMENTO - JS
-   1. Carrossel de Projetos
-   2. Menu mobile
-   3. Contato por e-mail (abre o aplicativo de e-mail)
-   ========================================================== */
-
 document.addEventListener("DOMContentLoaded", function () {
 
     /* 1. CARROSSEL - FUNCIONA COM SEU HTML ATUAL */
@@ -33,8 +26,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 if (!tituloExistente) {
                     const titulo = document.createElement("h3");
-                    titulo.textContent = indice === 0 ? "Orcas Fatos"
-                        : indice === 1 ? "Projeto 2"
+                    titulo.textContent = indice === 0 ? "Studio Ana Ju"
+                        : indice === 1 ? "Orcas Fatos"
                         : "Novo projeto em desenvolvimento";
                     card.append(titulo);
                 }
@@ -116,9 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
    
-    /* =====================================
-       3. FORMULÁRIO DEMONSTRATIVO
-       ===================================== */
+    /*FORMULÁRIO DEMONSTRATIVO */
 
     // Seleciona o formulário e a área de confirmação
     const form = document.getElementById("form-contato");
@@ -153,5 +144,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-}); // Fecha o DOMContentLoaded
+}); 
 
