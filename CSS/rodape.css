@@ -1,0 +1,43 @@
+.rodape{
+background-color: #080D3D;;
+}
+
+/*RODAPÉ DO SITE */
+
+.rodape {
+
+    /* Fundo azul escuro */
+    background-color: #080D3D;
+
+    /* Altura mínima do rodapé */
+    min-height: 150px;
+
+    /* Ativa o Flexbox */
+    display: flex;
+
+    /* Centraliza horizontalmente */
+    justify-content: center;
+
+    /* Centraliza verticalmente */
+    align-items: center;
+
+    /* Espaçamento interno */
+    padding: 20px;
+}
+
+/*LOGO DO RODAPÉ */
+
+.logo-do-rodape {
+
+    /* Tamanho da logo */
+    width: 220px;
+
+    /* Limita a largura */
+    max-width: 100%;
+
+    /* Mantém a proporção original */
+    height: auto;
+
+    /* Impede que a imagem seja cortada */
+    object-fit: contain;
+}

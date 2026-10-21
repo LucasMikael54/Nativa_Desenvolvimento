@@ -1,0 +1,823 @@
+
+/* ==================================================
+   NATIVA DESENVOLVIMENTO
+   CSS COMPLEMENTAR - COMPLEMENTOS.CSS
+   ================================================== */
+
+
+/* ==================================================
+   1. CARROSSEL DE PROJETOS
+   ================================================== */
+
+/* Área principal do carrossel */
+
+.carrossel {
+    position: relative;
+
+    flex: 1 1 700px;
+
+    width: 100%;
+    max-width: 920px;
+    min-width: 0;
+
+    /* Espaço para os botões laterais */
+    padding: 0 42px;
+
+    /* Esconde os cards fora da área visível */
+    overflow: hidden;
+}
+
+
+/* =====================================
+   FAIXA DOS PROJETOS
+   ===================================== */
+
+.container-projetos {
+
+    /* Cards organizados horizontalmente */
+    display: flex;
+    flex-wrap: nowrap;
+
+    /* Espaço entre os cards */
+    gap: 18px;
+
+    width: 100%;
+
+    /* Fundo transparente para mostrar o gradiente */
+    background: transparent;
+
+    /* Movimento suave */
+    transition: transform 0.4s ease;
+}
+
+
+/* =====================================
+   CARDS DOS PROJETOS
+   ===================================== */
+
+.quadrado1 {
+
+    /* Três cards no computador */
+    flex: 0 0 calc((100% - 36px) / 3);
+
+    min-width: 0;
+    min-height: 260px;
+
+    margin: 0;
+    padding: 12px;
+
+    /* Bordas */
+    border: 1px solid #225CBD;
+    border-radius: 12px;
+
+    /* Fundo dos cards */
+    background: linear-gradient(
+        145deg,
+        #104694,
+        #080D3D
+    );
+
+    /* Textos */
+    color: #FFFFFF;
+
+    /* Organização interna */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    /* Impede imagens de sair do card */
+    overflow: hidden;
+
+    /* Efeito */
+    transition: box-shadow 0.3s ease;
+}
+
+
+/* Sombra ao passar o mouse */
+
+.quadrado1:hover {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Link da imagem */
+
+.quadrado1 > a {
+    display: block;
+
+    width: 100%;
+    height: 175px;
+
+    overflow: hidden;
+
+    border-radius: 8px;
+}
+
+
+/* Imagem dentro do link */
+
+.quadrado1 > a > img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* Imagem diretamente dentro do card */
+
+.quadrado1 > img {
+    display: block;
+
+    width: 100%;
+    height: 175px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* Aproximação suave das imagens */
+
+.quadrado1:hover img {
+    transform: scale(1.05);
+}
+
+
+/* Títulos dos projetos */
+
+.quadrado1 h3 {
+    margin: 0;
+
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+
+/* Descrição dos projetos */
+
+.quadrado1 p {
+    color: #D9DCE8;
+
+    font-size: 12px;
+}
+
+
+/* =====================================
+   PROJETOS EM BREVE
+   ===================================== */
+
+.projeto-em-breve {
+    display: grid;
+    place-items: center;
+
+    height: 175px;
+
+    border: 1px dashed rgba(255, 255, 255, 0.45);
+    border-radius: 8px;
+
+    background: rgba(5, 10, 47, 0.45);
+
+    color: #C2F7B0;
+
+    font-weight: 600;
+}
+
+
+/* =====================================
+   BOTÕES DO CARROSSEL
+   ===================================== */
+
+.carrossel #anterior,
+.carrossel #proximo {
+
+    /* Posição das setas */
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    /* Centraliza as setas */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Tamanho */
+    width: 34px;
+    height: 44px;
+
+    padding: 0;
+    margin: 0;
+
+    /* Aparência */
+    background-color: #0B1048;
+
+    color: #FFFFFF;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 8px;
+
+    /* Ícone */
+    font-size: 23px;
+
+    /* Interação */
+    cursor: pointer;
+
+    z-index: 3;
+}
+
+
+/* Seta anterior */
+
+.carrossel #anterior {
+    left: 3px;
+}
+
+
+/* Seta próximo */
+
+.carrossel #proximo {
+    right: 3px;
+}
+
+
+/* Seta desativada */
+
+.carrossel button:disabled {
+    opacity: 0.35;
+
+    cursor: not-allowed;
+}
+
+
+
+/* ==================================================
+   2. NOSSA HISTÓRIA
+   ================================================== */
+
+/* Fundo da seção */
+
+.sobre-historia {
+    background-color: #080D3D;
+
+    color: white;
+
+    padding: 90px 7%;
+}
+
+
+/* =====================================
+   APRESENTAÇÃO DA NATIVA
+   ===================================== */
+
+.sobre-topo {
+    max-width: 850px;
+
+    margin-bottom: 55px;
+}
+
+
+/* Frase: Conheça nossa história */
+
+.sobre-topo span {
+    display: block;
+
+    color: #58C72B;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 20px;
+}
+
+
+/* Título principal */
+
+.sobre-topo h2 {
+    font-size: 45px;
+
+    line-height: 1.2;
+
+    margin-bottom: 20px;
+}
+
+
+/* Parte verde do título */
+
+.sobre-topo h2 strong {
+    color: #58C72B;
+}
+
+
+/* Descrição abaixo do título */
+
+.sobre-topo p {
+    color: #D9DCE8;
+
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+/* =====================================
+   HISTÓRIA EM DUAS COLUNAS
+   ===================================== */
+
+.sobre-textos {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+
+    margin-bottom: 55px;
+}
+
+
+/* Títulos das colunas */
+
+.sobre-textos h3 {
+    color: #FFFFFF;
+
+    font-size: 23px;
+
+    margin-bottom: 20px;
+}
+
+
+/* Parágrafos das colunas */
+
+.sobre-textos p {
+    color: #D9DCE8;
+
+    font-size: 16px;
+    line-height: 1.8;
+
+    margin-bottom: 18px;
+}
+
+
+/* =====================================
+   CRÉDITOS DO PROJETO
+   ===================================== */
+
+.sobre-creditos {
+
+    /* Dois cards lado a lado */
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+
+    margin-bottom: 40px;
+}
+
+
+/* Aparência dos cards */
+
+.credito-card {
+    background-color: #101B50;
+
+    border: 1px solid #284883;
+    border-radius: 12px;
+
+    padding: 30px;
+}
+
+
+/* Títulos dos cards */
+
+.credito-card h3 {
+    color: #58C72B;
+
+    font-size: 20px;
+
+    margin-bottom: 15px;
+}
+
+
+/* Desenvolvedores e parceiros */
+
+.credito-card p {
+    color: #FFFFFF;
+
+    font-size: 17px;
+
+    margin-bottom: 15px;
+}
+
+
+/* Descrição menor */
+
+.credito-card span {
+    color: #A9B4D0;
+
+    font-size: 13px;
+}
+
+
+/* =====================================
+   VALORES DA NATIVA
+   ===================================== */
+
+.sobre-valores {
+    display: flex;
+
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 35px;
+
+    padding-top: 30px;
+
+    border-top: 1px solid #284883;
+}
+
+
+/* Criatividade, Tecnologia e Colaboração */
+
+.sobre-valores span {
+    color: #58C72B;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+}
+
+
+
+/* ==================================================
+   3. CONTATO
+   ================================================== */
+
+.contato-nativa {
+
+    /* Texto e formulário lado a lado */
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 70px;
+
+    padding: 90px 70px;
+
+    /* Fundo do contato */
+    background: linear-gradient(
+        135deg,
+        #0B1048,
+        #103A7A
+    );
+
+    color: #FFFFFF;
+}
+
+
+/* =====================================
+   APRESENTAÇÃO DO CONTATO
+   ===================================== */
+
+.contato-apresentacao {
+    flex: 1;
+
+    max-width: 480px;
+}
+
+
+/* Frase verde acima do título */
+
+.secao-etiqueta {
+    display: inline-block;
+
+    color: #58C72B;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 18px;
+}
+
+
+/* Título do contato */
+
+.contato-apresentacao h2 {
+    font-size: 36px;
+
+    line-height: 1.3;
+
+    margin: 20px 0;
+}
+
+
+/* Parágrafos */
+
+.contato-apresentacao p {
+    color: #D9DCE8;
+
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+/* Aviso de formulário demonstrativo */
+
+.contato-observacao {
+    margin-top: 20px;
+
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+
+
+/* ==================================================
+   4. FORMULÁRIO DE CONTATO
+   ================================================== */
+
+.formulario-nativa {
+
+    /* Campos um abaixo do outro */
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    flex: 1;
+    max-width: 470px;
+    min-width: 0;
+
+    padding: 35px;
+
+    /* Fundo do formulário */
+    background-color: #080D3D;
+
+    /* Bordas */
+    border: 1px solid #31518A;
+    border-radius: 15px;
+}
+
+
+/* Nomes dos campos */
+
+.formulario-nativa label {
+    color: #FFFFFF;
+
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+/* =====================================
+   CAMPOS DO FORMULÁRIO
+   ===================================== */
+
+.formulario-nativa input,
+.formulario-nativa textarea {
+
+    width: 100%;
+
+    padding: 14px;
+
+    background-color: #101B50;
+    color: #FFFFFF;
+
+    border: 1px solid #37518A;
+    border-radius: 8px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+}
+
+
+/* Caixa de mensagem */
+
+.formulario-nativa textarea {
+
+    /* Impede alterar o tamanho manualmente */
+    resize: none;
+
+    /* Altura mínima */
+    min-height: 120px;
+}
+
+
+/* Textos dentro dos campos */
+
+.formulario-nativa input::placeholder,
+.formulario-nativa textarea::placeholder {
+    color: #A6B0CF;
+}
+
+
+/* Destaque quando o campo recebe foco */
+
+.formulario-nativa input:focus,
+.formulario-nativa textarea:focus {
+    outline: 2px solid #58C72B;
+
+    outline-offset: 1px;
+}
+
+
+/* =====================================
+   BOTÃO ENVIAR MENSAGEM
+   ===================================== */
+
+.formulario-nativa .botao-contato {
+
+    width: 100%;
+    min-height: 48px;
+
+    margin-top: 12px;
+
+    padding: 12px 20px;
+
+    background-color: #58C72B;
+    color: #080D3D;
+
+    border: none;
+    border-radius: 8px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s ease;
+}
+
+
+/* Botão ao passar o mouse */
+
+.formulario-nativa .botao-contato:hover {
+    background-color: #78E14F;
+}
+
+
+/* Mensagem de confirmação */
+
+#status-contato {
+    color: #8FEB77;
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+
+/* ==================================================
+   5. RODAPÉ
+   ================================================== */
+
+footer.rodape {
+    background-color: #080D3D;
+
+    color: #FFFFFF;
+
+    /* Organização vertical */
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 25px;
+
+    min-height: 200px;
+    height: auto;
+
+    padding: 50px 30px 20px;
+
+    text-align: center;
+}
+
+
+/* =====================================
+   LOGO DO RODAPÉ
+   ===================================== */
+
+footer.rodape .logo-do-rodape {
+    display: block;
+
+    width: 220px;
+    max-width: 100%;
+
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+/* =====================================
+   LINKS DO RODAPÉ
+   ===================================== */
+
+.menu-rodape {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 25px;
+}
+
+
+/* Links */
+
+.menu-rodape a {
+    color: #D9DCE8;
+
+    text-decoration: none;
+    font-size: 14px;
+
+    transition: color 0.3s ease;
+}
+
+
+/* Links ao passar o mouse */
+
+.menu-rodape a:hover {
+    color: #58C72B;
+}
+
+
+/* =====================================
+   DIREITOS AUTORAIS
+   ===================================== */
+
+.rodape-final {
+    width: 100%;
+
+    margin-top: 15px;
+    padding-top: 20px;
+
+    border-top: 1px solid #34416D;
+
+    text-align: center;
+}
+
+
+/* Texto final */
+
+.rodape-final p {
+    color: #A9B4D0;
+
+    font-size: 12px;
+}
+
+
+
+/* ==================================================
+   6. MENU MOBILE
+   ================================================== */
+
+/* Botão criado pelo JavaScript */
+
+.menu-toggle {
+
+    /* Escondido no computador */
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 8px;
+
+    background: transparent;
+    color: #FFFFFF;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+
+/*
+   IMPORTANTE:
+
+   Nenhum gradiente individual deve
+   ser aplicado em .servicos ou .projetos.
+
+   O fundo azul e branco pertence à
+   classe .caixa-seçao no styles.css.
+
+   A responsividade fica exclusivamente
+   no arquivo responsividade.css.
+*/
