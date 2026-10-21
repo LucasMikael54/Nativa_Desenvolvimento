@@ -808,16 +808,138 @@ footer.rodape .logo-do-rodape {
     cursor: pointer;
 }
 
+/* LOGO REDONDA DO STUDIO ANA JU */
 
-/*
-   IMPORTANTE:
+.quadrado1:first-child > img {
+    width: 170px;
+    height: 170px;
 
-   Nenhum gradiente individual deve
-   ser aplicado em .servicos ou .projetos.
+    border-radius: 50%;
+    object-fit: cover;
 
-   O fundo azul e branco pertence à
-   classe .caixa-seçao no styles.css.
+    align-self: center;
+}
+/* Altura dos cards */
 
-   A responsividade fica exclusivamente
-   no arquivo responsividade.css.
-*/
+.carrossel .quadrado1 {
+    min-height: 440px;
+}
+
+
+/* DESCRIÇÃO */
+
+.projeto-descricao {
+    color: #D9DCE8;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* TECNOLOGIAS */
+
+.projeto-tecnologias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.projeto-tecnologias span {
+    padding: 5px 10px;
+
+    background-color: #172D66;
+    color: #D9DCE8;
+
+    border: 1px solid #31518A;
+    border-radius: 6px;
+
+    font-size: 11px;
+}
+
+
+/* BOTÃO VER PROJETO */
+
+.carrossel .quadrado1 > .botao-ver-projeto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: auto;
+    min-height: 42px;
+
+    margin-top: auto;
+    padding: 10px;
+
+    background-color: #58C72B;
+    color: #080D3D;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+
+    transition: background-color 0.3s ease;
+}
+
+.carrossel .quadrado1 > .botao-ver-projeto:hover {
+    background-color: #78E14F;
+}
+
+
+/* =====================================
+   PROJETOS EM PREPARAÇÃO
+   ===================================== */
+
+/* Área onde ficará a imagem futuramente */
+
+.projeto-em-breve {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 175px;
+
+    background: linear-gradient(
+        135deg,
+        #101B50,
+        #204780
+    );
+
+    border: 1px dashed #5881BC;
+    border-radius: 8px;
+}
+
+/* Texto Em breve */
+
+.projeto-em-breve span {
+    color: #D9DCE8;
+
+    font-size: 17px;
+    font-weight: 600;
+}
+
+/* Status do projeto */
+
+.projeto-status {
+    display: flex;
+    align-items: center;
+
+    margin-top: auto;
+}
+
+/* Etiqueta de preparação */
+
+.projeto-status span {
+    padding: 8px 12px;
+
+    background-color: #172D66;
+    color: #A9B4D0;
+
+    border: 1px solid #31518A;
+    border-radius: 8px;
+
+    font-size: 12px;
+    font-weight: 500;
+}
