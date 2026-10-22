@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     const titulo = document.createElement("h3");
                     titulo.textContent = indice === 0 ? "Studio Ana Ju"
                         : indice === 1 ? "Orcas Fatos"
-                        : "Novo projeto em desenvolvimento";
+                            : "Novo projeto em desenvolvimento";
                     card.append(titulo);
                 }
             });
@@ -44,23 +44,61 @@ document.addEventListener("DOMContentLoaded", function () {
                 return { larguraCard, gap, maximo };
             }
 
+
+            /* ATUALIZA A POSIÇÃO DO CARROSSEL */
+
             function atualizar() {
                 const v = valores();
+
                 if (!v) return;
+
+                // Garante que a posição seja válida
                 posicao = Math.max(0, Math.min(posicao, v.maximo));
+
+                // Calcula o deslocamento dos cards
                 const deslocamento = posicao * (v.larguraCard + v.gap);
+
+                // Movimenta o carrossel
                 faixa.style.transform = `translateX(-${deslocamento}px)`;
-                anterior.disabled = (posicao === 0);
-                proximo.disabled = (posicao === v.maximo);
+
+                // Mantém as setas habilitadas para o ciclo
+                anterior.disabled = (v.maximo === 0);
+                proximo.disabled = (v.maximo === 0);
             }
 
+
+            /* BOTÃO ANTERIOR */
+
             anterior.addEventListener("click", function () {
-                posicao--;
+                const v = valores();
+
+                if (!v || v.maximo === 0) return;
+
+                // Se estiver no primeiro, vai para o último
+                if (posicao === 0) {
+                    posicao = v.maximo;
+                } else {
+                    posicao--;
+                }
+
                 atualizar();
             });
 
+
+            /* BOTÃO PRÓXIMO */
+
             proximo.addEventListener("click", function () {
-                posicao++;
+                const v = valores();
+
+                if (!v || v.maximo === 0) return;
+
+                // Se estiver no último, volta para o primeiro
+                if (posicao === v.maximo) {
+                    posicao = 0;
+                } else {
+                    posicao++;
+                }
+
                 atualizar();
             });
 
@@ -108,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-   
+
     /*FORMULÁRIO DEMONSTRATIVO */
 
     // Seleciona o formulário e a área de confirmação
@@ -145,4 +183,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 }); 
-
